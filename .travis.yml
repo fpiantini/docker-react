@@ -9,14 +9,16 @@ before_install:
 script:
     - docker run -e CI=true fpiantini/docker-react npm run test
 
-deploy:
-    provider: elasticbeanstalk
-    region: "us-east-2"
-    app: "docker-react"
-    env: "DockerReact-env"
-    bucket_name: "elasticbeanstalk-us-east-2-936117256416"
-    bucket_path: "docker-react"
-    on:
-        branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+# Uncomment this section to deploy to AWS (AWS shall be prepared accordingly...)
+# The application can be deployed using the Elastic Beanstalk AWS service
+#deploy:
+#    provider: elasticbeanstalk
+#    region: "us-east-2"
+#    app: "docker-react"
+#    env: "DockerReact-env"
+#    bucket_name: "elasticbeanstalk-us-east-2-936117256416"
+#    bucket_path: "docker-react"
+#    on:
+#        branch: master
+#    access_key_id: $AWS_ACCESS_KEY
+#    secret_access_key: $AWS_SECRET_KEY
