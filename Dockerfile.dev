@@ -4,7 +4,7 @@ COPY package.json .
 RUN npm install
 
 # This is not strictly necessary due to the usage of volumes
-# but it is left as a reference for the future
-### COPY . .
+# but we need this copy when we run tests (e.g. when using Travis CI)
+COPY . .
 
  CMD ["npm", "run", "start"]
